@@ -1,0 +1,15 @@
+import java.util.Scanner
+public class Main
+{
+    static String inventario_fante[] = new String [5];
+    
+    public static void inventario() {
+        
+        inventario[0] = "Lancia";
+        inventario[1] = "Pozione di cura piccola (5)";
+        inventario[2] = "Pozione di cura grade (10)";
+        inventario[3] = "Erbe curative (2)";
+        inventario[4] = "Equipaggiamento cavallo";
+        inventario[5] = "Oro (50)";
+    }
+}
