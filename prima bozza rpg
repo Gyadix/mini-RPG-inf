@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Main{
+	    String nome;
+	    int statistiche;
+	    int puntiesperienza;
+	    int[] inventario;
+	    String missioni;
+	    
+	    String scelta1 = "Inizia";
+	    String scelta2 = "Inventario";
+	    String scelta3 = "Esci";
+	}
+	public static void main(String[]args){
+	    Scanner input = new Scanner(System.in);
+	    	    
+	    String scelta1 = "Inizia";
+	    String scelta2 = "Inventario";
+	    String scelta3 = "Esci";
+	    
+	    System.out.print("Inserisci nome eroe: ");
+	    String nome = input.nextLine();
+	    System.out.println("Benvenuto " + nome);
+	    System.out.println("1. " + scelta1);
+	    System.out.println("2. " + scelta2);
+	    System.out.println("3. " + scelta3);
+	}
