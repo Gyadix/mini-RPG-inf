@@ -1,97 +1,106 @@
 import java.util.Scanner;
 
-public class Game{
-	    String nome;
-	    int puntiesperienza;
-	    String arma;
-	    int[] inventario;
-	    String missioni;
-	    int classe;
-	    String arciere;
-	    String fante;
-	    String speziale;
-	    String guardiano;
-	    String cavallo;
-	    boolean giocoiniziato = false;
-	    
-	    String scelta1 = "Inizia";
-	    String scelta2 = "Inventario";
-	    String scelta3 = "Esci";
-	}
-	public static void main(String[]args){
-	    Scanner input = new Scanner(System.in);
-	    	    
-	    String scelta1 = "Inizia";
-	    String scelta2 = "Inventario";
-	    String scelta3 = "Esci";
-	    int scelta;
-	    do{
-	        if (giocoiniziato == false){
-	    System.out.print("Inserisci nome eroe: ");
-	    String nome = input.nextLine();
-	    System.out.println("Benvenuto/a " + nome);
-	    System.out.println("1. " + scelta1);
-	    System.out.println("2. " + scelta2);
-	    System.out.println("3. " + scelta3);
-	    
-	    scelta = input.nextInt();
-	        }else{
-	            scelta = 1;
-	        }
-	    }switch (scelta){
-	        case 1:
-	            if(giocoiniziato==false){
-	                System.out.println("Scegli la tua classe:");
-	                System.out.println("1.Arciere: support");
-	                System.out.println("2.Fante: tank + hai un cavallo");
-	                System.out.println("3.Speziale: healer");
-	                System.out.println("4.Duellante: DPS");
-	                System.out.println("Inserisci la tua scelta (scrivi nome):");
-	                classe = input.nextInt();	            
-	                
-	                switch (classe){
-	                        case 1:
-	                            System.outprintln("Hai scelto l'arciere");
-	                        int psar = 15;
-	                        int forzaar = 15;
-	                        int vigorear = 20;
-	                        System.outprintln("Punti salute:"+psar"\n""forza:"+forzaar"\n""Vigore:"+vigorear"\n");
-	                        System.out.println("La tua arma è un arco da guerra");//ricontrolla cosa siano
-	                        giocoiniziato = true;
-	                        break;
-	                        
-	                        case 2:
-	                            System.out.println("Hai scelto il fante");
-	                        int psfa = 20;
-	                        int forzafa = 25;
-	                        int vigorefa = 15;
-	                         System.outprintln("Punti salute:"+psfa"\n""forza:"+forzafa"\n""Vigore:"+vigorefa"\n");
-	                         System.outprintln("La tua arma è una lancia ed hai un cavallo");
-	                         System.out.println("Scegli il nome del cavallo: ")
-	                         String cavallo = input.nextLine();
-	                         giocoiniziato = true;
-	                         break;
-	                         
-	                        case 3:
-	                            System.out.println("Hai scelto lo speziale");
-	                        int psspe = 10;
-	                        int forzaspe = 10;
-	                        int vigorespe = 10;
-	                         System.outprintln("Punti salute:",+psspe,"\n""forza:",+forzaspe,"\n""Vigore:",+vigorespe,"\n");
-	                         System.outprintln("La tua arma è un pugnale");
-	                         giocoiniziato = true;
-	                         break;
-	                         
-	                         case 4:
-	                             System.outprintln("Hai scelto il duellante");
-	                         int psdu 20;
-	                         int forzadu 15;
-	                         int vigoredu 10;
-	                         System.outprintln("Punti salute:"+psdu"\n""forza:"+forzadu"\n""Vigore:"+vigoredu"\n");
-	                         System.out.println("La tua arma è un fioretto");
-	                         break;
-	                         
-	                }
-	            }
-	    }
-	}
+public class Game {
+
+    public static void main(String[] args) {
+        try (Scanner input = new Scanner(System.in)) {
+
+        String scelta1 = "Inizia";
+        String scelta2 = "Inventario";
+        String scelta3 = "Esci";
+
+        int scelta;
+        int classe;
+        boolean giocoIniziato = false;
+
+        System.out.print("Inserisci nome eroe: ");
+        String nome = input.nextLine();
+
+        do {
+            System.out.println("Benvenuto/a " + nome);
+            System.out.println("1. " + scelta1);
+            System.out.println("2. " + scelta2);
+            System.out.println("3. " + scelta3);
+            scelta = input.nextInt();
+
+            switch (scelta) {
+                case 1:
+                    System.out.println("Scegli la tua classe:");
+                    System.out.println("1. Arciere (support)");
+                    System.out.println("2. Fante (tank, con cavallo)");
+                    System.out.println("3. Speziale (healer)");
+                    System.out.println("4. Duellante (DPS)");
+                    System.out.print("Inserisci la tua scelta (numero): ");
+                    classe = input.nextInt();
+                    input.nextLine(); // consuma il newline
+
+                    switch (classe) {
+                        case 1: {
+                            int ps = 15;
+                            int forza = 15;
+                            int vigore = 20;
+                            System.out.println("Hai scelto l'arciere");
+                            System.out.println("Punti salute: " + ps + "\nforza: " + forza + "\nVigore: " + vigore);
+                            System.out.println("La tua arma è un arco da guerra");
+                            giocoIniziato = true;
+                            break;
+                        }
+                        case 2: {
+                            int ps = 20;
+                            int forza = 25;
+                            int vigore = 15;
+                            System.out.println("Hai scelto il fante");
+                            System.out.println("Punti salute: " + ps + "\nforza: " + forza + "\nVigore: " + vigore);
+                            System.out.println("La tua arma è una lancia ed hai un cavallo");
+                            System.out.print("Scegli il nome del cavallo: ");
+                            String cavallo = input.nextLine();
+                            System.out.println("Il tuo cavallo si chiama: " + cavallo);
+                            giocoIniziato = true;
+                            break;
+                        }
+                        case 3: {
+                            int ps = 10;
+                            int forza = 10;
+                            int vigore = 10;
+                            System.out.println("Hai scelto lo speziale");
+                            System.out.println("Punti salute: " + ps + "\nforza: " + forza + "\nVigore: " + vigore);
+                            System.out.println("La tua arma è un pugnale");
+                            giocoIniziato = true;
+                            break;
+                        }
+                        case 4: {
+                            int ps = 20;
+                            int forza = 15;
+                            int vigore = 10;
+                            System.out.println("Hai scelto il duellante");
+                            System.out.println("Punti salute: " + ps + "\nforza: " + forza + "\nVigore: " + vigore);
+                            System.out.println("La tua arma è un fioretto");
+                            giocoIniziato = true;
+                            break;
+                        }
+                        default:
+                            System.out.println("Scelta classe non valida.");
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Inventario non ancora disponibile.");
+                    break;
+
+                case 3:
+                    System.out.println("Uscita dal gioco.");
+                    break;
+
+                default:
+                    System.out.println("Scelta non valida.");
+                    break;
+            }
+
+        } while (scelta != 3);
+
+        if (giocoIniziato) {
+            System.out.println("Buon divertimento, " + nome + "!");
+        }
+        }
+    }
+}
