@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Game {
+public class Main {
 
     public static void main(String[] args) {
         try (Scanner input = new Scanner(System.in)) {
@@ -32,7 +32,7 @@ public class Game {
                     System.out.println("4. Duellante (DPS)");
                     System.out.print("Inserisci la tua scelta (numero): ");
                     classe = input.nextInt();
-                    input.nextLine(); // consuma il newline
+                    input.nextLine();
 
                     switch (classe) {
                         case 1: {
